@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    application_helper:
+      title: "Ruby on Rails Tutorial Sample App"
   layouts:
     application:
       title: "Ruby on Rails Tutorial Sample App"
@@ -27,30 +30,34 @@ en:
     home:
       home: "Home"
       sample: "Sample App"
-      this: "This is the home page for the"
-      ruby: "Ruby on Rails Tutorial"
-      sa: " sample application"
+      this: "This is the home page for the
+        %{rort} sample application."
+      link_rort: "http://www.railstutorial.org/"
+      rort: "Ruby on Rails Tutorial"
     about:
       about: "About"
-      is: " is a"
-      ruby: "Ruby on Rails Tutorial"
-      ruby2: "Ruby on Rails"
-      book: " book"
-      and: " and"
-      ss: " screencast series"
-      toteach: " screencast series"
-      this: "This is the sample application for the tutorial."
+      this: "The %{rort} is a %{book} and %{screencast}
+        to teach web development with %{ror}.
+        This is the sample application for the tutorial."
+      link_rort: "http://www.railstutorial.org/"
+      link_book: "http://www.railstutorial.org/book"
+      link_screencast: "http://screencasts.railstutorial.org/"
+      link_ror: "http://rubyonrails.org/"
+      rort: "Ruby on Rails Tutorial"
+      book: "book"
+      screencast: "screencast"
+      ror: "Ruby on Rails"
     help:
       help: "Help"
-      is: " is a"
-      ruby: "Ruby on Rails Tutorial"
-      ruby2: "Ruby on Rails"
-      book: " book"
-      and: " and"
-      ss: " screencast series"
-      toteach: " screencast series"
-      this: "This is the sample application for the tutorial."
+      this: "Get help on the Ruby on Rails Tutorial at the %{rorhs}
+        To get help on this sample app, see the %{rort} book."
+      link_rorhs: "http://www.railstutorial.org/help"
+      link_rort: "http://www.railstutorial.org/"
+      rorhs: "Rails Tutorial help section"
+      rort: "Ruby on Rails Tutorial"
     contact:
       contact: "Contact"
-      info: "Contact the Ruby on Rails Tutorial about the sample app at the"
-      cp: " contact page"
+      this: "Contact the Ruby on Rails Tutorial
+        about the sample app at the %{cp}."
+      link_cp: "http://www.railstutorial.org/contact"
+      cp: "Contact page"

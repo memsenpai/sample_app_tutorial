@@ -1,6 +1,5 @@
 <% provide :title, t(".contact") %>
 <h1><%= t ".contact" %></h1>
 <p>
-  <%= t ".info" %>
-  <a href="http://www.railstutorial.org/contact"><%= t ".cp" %></a>.
+  <%= t(".this", cp: link_to(t(".cp"), t(".link_cp"))).html_safe %>
 </p>

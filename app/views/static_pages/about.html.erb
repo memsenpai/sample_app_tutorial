@@ -1,12 +1,8 @@
 <% provide :title, t(".about") %>
 <h1><%= t ".about" %></h1>
 <p>
-  The <a href="http://www.railstutorial.org/">
-  <em><%= t ".ruby" %></em></a>
-  <%= t ".is" %>
-  <a href="http://www.railstutorial.org/book"><%= t ".book" %></a> and
-  <a href="http://screencasts.railstutorial.org/"><%= t ".ss" %></a>
-  <%= t ".toteach" %>
-  <a href="http://rubyonrails.org/"><%= t "ruby2" %></a>.
-  <%= t ".this" %>
+  <%= t(".this", rort: link_to(t(".rort"), t(".link_rort")),
+    book: link_to(t(".book"), t(".link_book")),
+    screencast: link_to(t(".screencast"), t(".link_screencast")),
+    ror: link_to(t(".ror"), t(".link_ror"))).html_safe %>
 </p>

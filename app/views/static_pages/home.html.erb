@@ -1,7 +1,5 @@
 <% provide :title, t(".home") %>
 <h1><%= t ".sample" %></h1>
 <p>
-  <%= t ".this" %>
-  <a href="http://www.railstutorial.org/"><%= t ".ruby" %></a>
-  <%= t ".sa" %>.
+  <%= t(".this", rort: link_to(t(".rort"), t(".link_rort"))).html_safe %>
 </p>
