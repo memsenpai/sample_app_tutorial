@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    // "commonjs": true,
+    // "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "window": true,
+    "I18n": true,
+    "CKEDITOR": true,
+    "Growl": true,
+    "SimpleMDE": true,
+    "Dropzone": true,
+    "Routes": true,
+    "swal": true
+  },
+
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}
