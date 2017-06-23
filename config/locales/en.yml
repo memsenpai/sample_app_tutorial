@@ -26,13 +26,27 @@ en:
   layouts:
     application:
       title: "Ruby on Rails Tutorial Sample App"
+    header:
+      sample: "sample app"
+      home: "Home"
+      help: "Help"
+      login: "Log in"
+    footer:
+      this: "The %{rort} by %{mh}"
+      rort: "Ruby on Rails Tutorial"
+      mh: "Michael Hartl"
+      about: "About"
+      contact: "Contact"
+      news: "News"
   static_pages:
     home:
       home: "Home"
-      sample: "Sample App"
+      sample: "Welcome to the Sample App"
       this: "This is the home page for the
         %{rort} sample application."
       rort: "Ruby on Rails Tutorial"
+      signup: "Sign up now!"
+      railslogo: "Rails logo"
     about:
       about: "About"
       this: "The %{rort} is a %{book} and %{screencast}
