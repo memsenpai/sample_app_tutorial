@@ -9,7 +9,7 @@ capybara-*.html
 /log/*
 /tmp/*
 /test/*
-/spec/**/
+/spec/*
 /db/*.sqlite3
 /public/system/*
 /coverage/
@@ -29,3 +29,4 @@ config/environments/*.local.yml
 .framgia-ci-result.temp.yml
 /config/secrets.yml
 /config/settings/*
+.byebug_history
