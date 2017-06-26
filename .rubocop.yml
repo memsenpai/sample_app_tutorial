@@ -23,6 +23,7 @@ AllCops:
     - db/schema.rb
     - lib/tasks/**/*.rake
     - test/**
+    - test/**/**
     - config/initializers/**
     - config/environments/**
     - db/migrate/**
