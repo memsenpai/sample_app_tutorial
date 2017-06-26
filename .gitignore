@@ -9,7 +9,7 @@ capybara-*.html
 /log/*
 /tmp/*
 /test/*
-/spec/**/*
+/spec/**/
 /db/*.sqlite3
 /public/system/*
 /coverage/
