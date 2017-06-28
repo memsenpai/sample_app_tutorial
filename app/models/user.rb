@@ -11,7 +11,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :password,
-    length: {minimum: Settings.password.minimum},allow_nil: true
+    length: {minimum: Settings.password.minimum}, allow_nil: true
   validates :password_confirmation, presence: true,
     length: {minimum: Settings.password.minimum}, on: [:create]
 
@@ -42,6 +42,10 @@ class User < ApplicationRecord
 
   def forget
     update_attributes remember_digest: nil
+  end
+
+  def current_user? current_user
+    self == current_user
   end
 
   private
