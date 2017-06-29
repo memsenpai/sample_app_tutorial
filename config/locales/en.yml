@@ -1,4 +1,5 @@
 en:
+  please: "Please log in."
   helpers:
     application_helper:
       title: "Ruby on Rails Tutorial Sample App"
@@ -30,6 +31,10 @@ en:
       remember: "Remember me on this computer"
     create:
       invalid: "Invalid email/password combination"
+  shared:
+    error_messages:
+      contains: "The form contains %{count_errors}"
+      error: "error"
   static_pages:
     home:
       home: "Home"
@@ -60,6 +65,15 @@ en:
         about the sample app at the %{cp}."
       cp: "Contact page"
   users:
+    user:
+      delete: "Delete"
+      sure: "You sure?"
+    index:
+      users: "All users"
+    show:
+      notfound: "Not found this User"
+    destroy:
+      destroy: "%{user} deleted"
     new:
       signup: "Sign up"
       content: "This will be a signup page for new users."
@@ -68,7 +82,11 @@ en:
       creating: "Creating....."
       signup: "Sign up"
       confirm: "Confirmation"
-  shared:
-    error_messages:
-      contains: "The form contains %{count_errors}"
-      error: "error"
+    edit:
+      edit: "Edit user"
+      update: Update your profile
+      confirm: "Confirmation"
+      submit: "Save changes"
+      change: "Change"
+    update:
+      updated: "Profile updated"
