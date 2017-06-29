@@ -10,6 +10,7 @@ en:
   expired: "Password reset has expired."
   empty: "can't be empty"
   reseted: "Password has been reset."
+  notfound: "Not found this User"
   helpers:
     application_helper:
       title: "Ruby on Rails Tutorial Sample App"
