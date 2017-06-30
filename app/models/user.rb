@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
-  attr_reader :remember_token
+  attr_reader :remember_token, :activation_token
 
   before_save :email_downcase
 
@@ -14,6 +14,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.password.minimum}, allow_nil: true
   validates :password_confirmation, presence: true,
     length: {minimum: Settings.password.minimum}, on: [:create]
+
+  before_create :create_activation_digest
 
   class << self
     def digest string
@@ -35,9 +37,10 @@ class User < ApplicationRecord
     update_attributes remember_digest: User.digest(remember_token)
   end
 
-  def authenticated? remember_token
-    return false unless remember_digest.present?
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false if digest.blank?
+    BCrypt::Password.new(digest).is_password? token
   end
 
   def forget
@@ -48,9 +51,26 @@ class User < ApplicationRecord
     self == current_user
   end
 
+  def change_activation_token
+    @activation_token = User.new_token
+  end
+
+  def activate
+    update_attributes activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   private
 
   def email_downcase
     email.downcase!
+  end
+
+  def create_activation_digest
+    change_activation_token
+    self.activation_digest = User.digest activation_token
   end
 end
