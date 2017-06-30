@@ -24,11 +24,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update user_params
@@ -49,10 +47,10 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by id: params[:id]
-    unless @user
-      redirect_to root_url
-      flash[:info] = t ".notfound"
-    end
+
+    return if @user
+    redirect_to root_url
+    flash[:info] = t ".notfound"
   end
 
   def user_params
@@ -61,11 +59,10 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t "please"
-      redirect_to login_url
-    end
+    return if logged_in?
+    store_location
+    flash[:danger] = t "please"
+    redirect_to login_url
   end
 
   def correct_user
