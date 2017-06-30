@@ -13,7 +13,8 @@ UtilityFunction:
   enabled: false
 DuplicateMethodCall:
   enabled: false
-
+TooManyMethods:
+  max_methods: 18
 exclude_paths:
   - db
 
@@ -26,3 +27,4 @@ exclude_paths:
     enabled: false
   RepeatedConditional:
     enabled: false
+

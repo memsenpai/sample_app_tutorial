@@ -1,8 +1,10 @@
 User.create! name:  "dao van hung",
- email: "memsenpai@gmail.com",
- password: "123456",
- password_confirmation: "123456",
- admin: true
+  email: "memsenpai@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  admin: true,
+  activated: true,
+  activated_at: Time.zone.now
 
 99.times do |n|
   name  = Faker::Name.name
@@ -11,7 +13,9 @@ User.create! name:  "dao van hung",
   User.create! name: name,
     email: email,
     password: password,
-    password_confirmation: password
+    password_confirmation: password,
+    activated: true,
+    activated_at: Time.zone.now
 end
 
 users = User.order(:created_at).take(6)
@@ -21,3 +25,10 @@ users = User.order(:created_at).take(6)
     user.microposts.create! content: content, created_at: i.minutes.ago
   end
 end
+
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each{|followed| user.follow(followed)}
+followers.each{|follower| follower.follow(user)}
