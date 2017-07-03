@@ -31,3 +31,4 @@ config/environments/*.local.yml
 /config/settings/*
 .byebug_history
 /config/application.yml
+/public/javascripts/translations.js
