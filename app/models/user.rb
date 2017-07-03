@@ -4,12 +4,15 @@ class User < ApplicationRecord
   attr_reader :remember_token, :activation_token, :reset_token
 
   has_many :microposts, dependent: :destroy
+  has_many :likes, class_name: "Like", foreign_key: "liker_id", dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
     foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :liked, through: :likes, source: :post
+  before_save :email_downcase
 
   has_secure_password
   validates :name, presence: true, length: {maximum: Settings.name.maximum}

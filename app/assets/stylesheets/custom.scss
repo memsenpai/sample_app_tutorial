@@ -330,3 +330,19 @@ form {
     border: 0;
   }
 }
+
+.like-button{
+background: url(./like.jpg);
+background-size: 30px;
+width: 30px;
+height: 30px;
+padding: 0;
+padding-bottom: 5px;
+border: 0;
+}
+.stat{
+    font-size: 200%;
+  a{
+      font-size: 50%;
+  }
+}

@@ -28,6 +28,8 @@ en:
   follow: "Follow"
   unfollow: "Unfollow"
   view_p: "view my profile"
+  like: "like"
+  unlike: "unlike"
   helpers:
     application_helper:
       title: "Ruby on Rails Tutorial Sample App"

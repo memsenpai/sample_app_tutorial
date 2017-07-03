@@ -8,9 +8,24 @@
   </span>
   <span class="timestamp">
     <%= t "time_post", time: time_ago_in_words(micropost.created_at) %>
+    <div class="stat">
+<% if micropost.like? current_user %>
+<%= form_for micropost.likes.find_by(liker_id: @user.id),
+  html: {method: :delete}, remote: true do |f| %>
+  <%= micropost.liking.count %>
+  <%= f.submit "", class: "like-button" %>
+<% end %>
+<% else %>
+<%= form_for micropost.likes.build, remote: true do |f| %>
+      <div><%= hidden_field_tag :liker_id, current_user.id %></div>
+      <div><%= hidden_field_tag :post_id, micropost.id %></div>
+      <%= micropost.liking.count %>
+      <%= f.submit "", class: "like-button" %>
+    <% end %>
+<% end %>
     <% if micropost.user.current_user? current_user %>
       <%= link_to t("delete"), micropost, method: :delete,
-      	data: {confirm: t("u_sure")} %>
-    <% end %>
+        data: {confirm: t("u_sure")} %>
+    <% end %>></div>
   </span>
 </li>
