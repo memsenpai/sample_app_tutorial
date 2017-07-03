@@ -11,6 +11,18 @@ en:
   empty: "can't be empty"
   reseted: "Password has been reset."
   notfound: "Not found this User"
+  time_post: "Posted %{time} ago."
+  m_created: "Micropost created!"
+  view_m: "view my profile"
+  micropost: "Micropost"
+  compose: "Compose new micropost..."
+  post: "Post"
+  m_feed: "Micropost Feed"
+  delete: "delete"
+  m_deleted: "Micropost deleted"
+  limit: "should be less than 5MB"
+  alert_js: "Maximum file size is 5MB. Please choose a smaller file."
+  u_sure: "You sure?"
   helpers:
     application_helper:
       title: "Ruby on Rails Tutorial Sample App"
@@ -132,3 +144,6 @@ en:
       updated: "Profile updated"
     create:
       activate: "Please check your email to activate your account."
+  errors:
+    messages:
+      mini_magick_processing_error: "should be less than 5MB"
